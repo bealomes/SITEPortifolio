@@ -1,0 +1,1159 @@
+/**
+* Template Name: MyResume
+* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
+* Updated: Mar 17 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+/* Seletor de tipo: Aplica estilos básicos ao corpo do documento, definindo fonte e cor do texto para uniformidade visual. */
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #272829;
+}
+
+/* Seletor de tipo: Define a cor padrão e a propriedade de decoração de texto para todos os links, melhorando a navegabilidade e a consistência visual. */
+a {
+  color: #0563bb;
+  text-decoration: none;
+}
+
+/* Seletor de pseudo-classe: Altera a cor dos links quando o mouse passa sobre eles para realçar a interatividade. */
+a:hover {
+  color: #067ded;
+}
+
+/* Seletor de grupo: Aplica uma fonte mais elegante para todos os cabeçalhos, destacando-os visualmente. */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+/* Seletor de classe: Estiliza o botão 'voltar ao topo', que é ocultado e somente exibido ao interagir, fixado no canto inferior direito da página. */
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: #80638b;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+/* Seletor de ID: Aplica estilos ao preloader que é exibido durante o carregamento da página, cobrindo toda a janela do navegador. */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #fff;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+/* Media Query: Remove atrasos de animação em dispositivos móveis para melhorar a performance e a experiência do usuário. */
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+/* Seletor de ID: Define estilos para o cabeçalho fixo, garantindo que ele seja acessível e visível em diferentes dispositivos. */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 9997;
+  transition: all 0.5s;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+/* Media Query: Estilos específicos para o cabeçalho em dispositivos com largura menor que 991px, modificando a largura, o fundo e o posicionamento do mesmo. */
+@media (max-width: 991px) {
+  #header {
+    width: 300px;
+    background: #fff;
+    border-right: 1px solid #80638b;
+    left: -300px;
+  }
+}
+
+/* Media Query: Ajusta a margem do conteúdo principal quando o cabeçalho é visível em telas maiores, garantindo espaço adequado ao lado do cabeçalho fixo. */
+@media (min-width: 991px) {
+  #main {
+    margin-left: 100px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Seletor de classe: Define o estilo do menu de navegação principal para desktop, incluindo ajustes de display e alinhamento. */
+.nav-menu {
+  padding: 0;
+  display: block;
+}
+
+/* Seletor descendente: Aplica reset de margens e paddings para todos os elementos dentro de .nav-menu, garantindo uma apresentação limpa e uniforme. */
+.nav-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Seletor filho direto: Estiliza especificamente os itens de lista diretamente sob ul no .nav-menu, definindo seu posicionamento e comportamento de texto. */
+.nav-menu > ul > li {
+  position: relative;
+  white-space: nowrap;
+}
+
+/* Seletor descendente combinado com pseudo-classe: Aplica estilos para links dentro do .nav-menu, incluindo flexbox para alinhamento, cores, padding, e transições suaves. */
+.nav-menu a,
+.nav-menu a:focus {
+  display: flex;
+  align-items: center;
+  color: #45505b;
+  padding: 10px 18px;
+  margin-bottom: 8px;
+  transition: 0.3s;
+  font-size: 15px;
+  border-radius: 50px;
+  background: #f2f3f5;
+  height: 56px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Seletor descendente: Define o estilo para ícones dentro dos links, ajustando o tamanho dos mesmos. */
+.nav-menu a i,
+.nav-menu a:focus i {
+  font-size: 20px;
+}
+
+/* Seletor descendente: Estiliza o texto dentro dos links, definindo padding e cor, para manter a consistência visual e legibilidade. */
+.nav-menu a span,
+.nav-menu a:focus span {
+  padding: 0 5px 0 7px;
+  color: #45505b;
+}
+
+/* Media Query com seletor descendente: Ajusta a largura dos links e oculta o texto dos spans em telas largas, simplificando a apresentação visual do menu. */
+@media (min-width: 992px) {
+  .nav-menu a,
+  .nav-menu a:focus {
+    width: 56px;
+  }
+  .nav-menu a span,
+  .nav-menu a:focus span {
+    display: none;
+    color: #fff;
+  }
+}
+
+/* Seletores de pseudo-classe e classe: Estiliza os links quando hover ou estados ativos são acionados, mudando a cor e o fundo para destacar a interatividade. */
+.nav-menu a:hover,
+.nav-menu .active,
+.nav-menu .active:focus,
+.nav-menu li:hover > a {
+  color: #fff;
+  background: #b695bf;
+}
+
+/* Seletor descendente combinado com hover: Mantém a visibilidade do texto dos links quando hover é aplicado, exibindo-os e mudando sua cor para branco. */
+.nav-menu a:hover span,
+.nav-menu .active span,
+.nav-menu .active:focus span,
+.nav-menu li:hover > a span {
+  color: #fff;
+}
+
+/* Seletor descendente combinado com hover: Expande os links para largura total no hover, destacando a interatividade e facilitando a seleção.
+
+/*--------------------------------------------------------------
+Define a estética da parte inicial do site
+--------------------------------------------------------------*/
+#hero { /* Seletor de ID: Aplica estilos à seção hero, definindo imagem de fundo, tamanho e posição. */
+  width: 100%;
+  height: 100vh;
+  background: url("../img/fundo_inicio.jpg") top right no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+@media (min-width: 992px) { /* Media Query: Aplica estilos quando a largura da tela é pelo menos 992px, ajustando o padding esquerdo. */
+  #hero {
+    padding-left: 160px;
+  }
+}
+
+#hero:before { /* Seletor de pseudo-elemento: Cria uma sobreposição com fundo semitransparente sobre a seção hero. */
+  content: "";
+  background: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hero h1 { /* Seletor de descendente: Estiliza o título principal dentro da seção hero. */
+  margin: 0;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #80638b;
+}
+
+#hero p { /* Seletor de descendente: Estiliza o parágrafo dentro da seção hero. */
+  color: #45505b;
+  margin: 15px 0 0 0;
+  font-size: 26px;
+  font-family: "Poppins", sans-serif;
+}
+
+#hero p span { /* Seletor de descendente: Aplica estilo específico ao elemento span dentro do parágrafo. */
+  color: #67c2b9;
+  letter-spacing: 1px;
+}
+
+#hero .social-links { /* Seletor de descendente: Estiliza a área de links sociais dentro de hero. */
+  margin-top: 30px;
+}
+
+#hero .social-links a { /* Seletor de descendente: Estiliza os links dentro da área de links sociais. */
+  font-size: 24px;
+  display: inline-block;
+  color: #45505b;
+  line-height: 1;
+  margin-right: 20px;
+  transition: 0.3s;
+}
+
+#hero .social-links a:hover { /* Seletor de pseudo-classe: Estiliza o estado hover dos links sociais. */
+  color: #0563bb;
+}
+
+@media (max-width: 992px) { /* Media Query: Ajusta o estilo da seção hero para telas com largura máxima de 992px. */
+  #hero {
+    text-align: center;
+  }
+
+  #hero h1 { /* Ajusta o tamanho do título para telas menores. */
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  #hero p { /* Ajusta o tamanho do parágrafo para telas menores. */
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section { /* Seletor de tipo: Aplica estilo geral para todas as seções para manter a uniformidade. */
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-title { /* Seletor de classe: Estiliza o título das seções. */
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 { /* Seletor de descendente: Aplica estilo ao h2 dentro dos títulos das seções. */
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #b695bf;
+}
+
+.section-title h2::before, /* Seletor de pseudo-elemento: Adiciona uma linha decorativa antes do título. */
+.section-title h2::after { /* Seletor de pseudo-elemento: Adiciona um destaque decorativo após o título. */
+  content: "";
+  position: absolute;
+  display: block;
+  background: #ddd; /* Linha decorativa */
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+.section-title h2::after {
+  width: 40px;
+  height: 3px;
+  background: #80638b; /* Destaque decorativo */
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
+.section-title p { /* Seletor de descendente: Aplica estilo ao parágrafo dentro do título da seção. */
+  margin-bottom: 0;
+}
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+#resuMe{ /* Seletor de ID: Aplica estilos ao resumo pessoal, centralizando o texto e ajustando a margem superior. */
+  margin-top: 2%;
+  text-align: center;
+}
+
+.about .content h3 { /* Seletor de descendente: Estiliza os cabeçalhos h3 dentro da seção about para destacar a informação. */
+  font-weight: 700;
+  font-size: 26px;
+  color: #b695bf;
+}
+
+#minhafoto { /* Seletor de ID: Define o estilo para a foto pessoal, incluindo dimensões, bordas e alinhamento. */
+  width: 192px;
+  height: 192px;
+  border-width: 4px;
+  border-color: #b695bf;
+  border-style: solid;
+  border-radius: 100px;
+  margin-left: 3cm;
+}
+
+.about .content ul { /* Seletor de descendente: Remove estilos de lista para uma apresentação limpa das listas dentro do conteúdo sobre. */
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li { /* Seletor de descendente: Estiliza cada item da lista para alinhar os ícones com o texto adequadamente. */
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.about .content ul strong { /* Seletor de descendente: Aplica um estilo específico ao texto em negrito dentro das listas. */
+  margin-right: 10px;
+}
+
+.about .content ul i { /* Seletor de descendente: Estiliza os ícones dentro das listas, ajustando tamanho, cor e margem. */
+  font-size: 16px;
+  margin-right: 5px;
+  color: #67c2b9;
+  line-height: 0;
+}
+
+.about .content p:last-child { /* Seletor de descendente: Remove a margem inferior do último parágrafo dentro do conteúdo sobre para um espaçamento uniforme. */
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+Estilos Adicionais para Informações Pessoais
+--------------------------------------------------------------*/
+.bg-gradient { /* Seletor de classe: Aplica um gradiente de fundo e ajusta a cor do texto para seções específicas. */
+  background: linear-gradient(to right, #67c2b9 0%, #9ce0db 100%);
+  color: #80638b;
+}
+
+.text-shadow { /* Seletor de classe: Adiciona uma sombra sutil ao texto para melhorar a legibilidade contra o fundo claro. */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+i { /* Seletor de tipo: Define a cor padrão para todos os ícones para manter a consistência visual. */
+  color: #67c2b9;
+}
+
+i.bi { /* Seletor de classe com combinação de tipo: Especifica o estilo para ícones Bootstrap com a classe `bi`, ajustando a margem. */
+  margin-right: 10px;
+}
+
+.shadow { /* Seletor de classe: Adiciona uma sombra externa para criar um efeito de elevação em componentes específicos. */
+  box-shadow: 0 4px 8px rgba(67, 194, 185, 0.25);
+}
+
+.rounded { /* Seletor de classe: Aplica bordas arredondadas a elementos para suavizar sua apresentação visual. */
+  border-radius: 15px;
+}
+
+ul { /* Seletor de tipo: Remove o padding padrão das listas para uma apresentação limpa. */
+  padding-left: 0;
+}
+
+ul li { /* Seletor de tipo: Define um estilo padrão para itens de lista, ajustando o espaçamento entre eles. */
+  margin-bottom: 10px;
+}
+
+ul li strong { /* Seletor de tipo combinado: Estiliza o texto em negrito dentro de listas, destacando-o com uma cor mais escura. */
+  color: #80638b;
+}
+
+h3 { /* Seletor de tipo: Define um estilo padrão para todos os elementos h3, usando uma cor escura para destaque e legibilidade. */
+  color: #80638b;
+}
+
+/*--------------------------------------------------------------
+# Skills and Interests Section Styles
+--------------------------------------------------------------*/
+.skills-interests { /* Seletor de classe: Estabelece o plano de fundo e o espaçamento vertical para a seção de habilidades e interesses. */
+  background-color: #f9f9f9;
+  padding: 40px 0;
+}
+
+.skills-interests .section-title h2 { /* Seletor de descendente: Estiliza o título da seção de habilidades e interesses para destacá-lo visualmente. */
+  color: #80638b;
+  margin-bottom: 20px;
+}
+
+.skills-interests .skills-box, /* Seletor de classe: Estiliza caixas de habilidades e interesses, aplicando um fundo, padding, bordas arredondadas e sombras. */
+.skills-interests .interests-box {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.skills-interests h3 { /* Seletor de descendente: Define o estilo dos títulos dentro das caixas de habilidades e interesses. */
+  color: #34495e;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.skills-interests ul { /* Seletor de descendente: Remove os estilos de lista padrão para as listas dentro das caixas de habilidades e interesses. */
+  list-style: none;
+  padding: 0;
+}
+
+.skills-interests li { /* Seletor de descendente: Estiliza os itens de lista nas caixas de habilidades e interesses, ajustando espaçamento e fonte. */
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.skills-interests .icon { /* Seletor de classe: Estiliza os ícones nas listas de habilidades e interesses para destacá-los com cor e margem. */
+  color: #67c2b9;
+  margin-right: 10px;
+}
+
+.skills-interests i.bi-check-circle-fill, /* Seletor de classe: Estiliza os ícones de habilidades com uma cor específica. */
+.skills-interests i.bi-caret-right-fill { /* Seletor de classe: Estiliza os ícones de interesses com uma cor específica. */
+  color: #80638b;
+}
+
+
+/*--------------------------------------------------------------
+# Skills
+--------------------------------------------------------------*/
+/* Seletor de classe: Estiliza a barra de progresso dentro da seção de habilidades, definindo altura, exibição e outros estilos visuais. */
+.skills .progress {
+  height: 60px;
+  display: block;
+  background: none;
+  border-radius: 0;
+}
+
+/* Seletor descendente: Aplica estilos aos títulos das habilidades dentro da barra de progresso, como transformação de texto e peso da fonte. */
+.skills .progress .skill {
+  padding: 10px 0;
+  margin: 0;
+  text-transform: uppercase;
+  display: block;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #45505b;
+}
+
+/* Seletor descendente: Estiliza a porcentagem da habilidade para alinhar à direita dentro da barra. */
+.skills .progress .skill .val {
+  float: right;
+  font-style: normal;
+}
+
+/* Seletor de classe: Define o plano de fundo para a barra de progresso envolvente. */
+.skills .progress-bar-wrap {
+  background: #f2f3f5;
+}
+
+/* Seletor de classe: Estiliza a barra de progresso dinâmica, incluindo transição para animação suave de crescimento. */
+.skills .progress-bar {
+  width: 1px;
+  height: 10px;
+  transition: 0.9s;
+  background-color: #67c2b9;
+}
+
+/*--------------------------------------------------------------
+# Resume
+--------------------------------------------------------------*/
+/* Seletor de classe: Aplica estilos aos títulos de seções no resumo, como tamanho da fonte e cor. */
+.resume .resume-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #45505b;
+}
+
+/* Seletor de classe: Estiliza cada item do resumo, incluindo padding e bordas para destaque visual. */
+.resume .resume-item {
+  padding: 0 0 20px 20px;
+  margin-top: -2px;
+  border-left: 2px solid #67c2b9;
+  position: relative;
+}
+
+/* Seletor descendente: Aplica formatação ao texto de cabeçalhos dentro dos itens do resumo, destacando-os visualmente. */
+.resume .resume-item h4 {
+  line-height: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: #67c2b9;
+  margin-bottom: 10px;
+}
+
+/* Seletor descendente: Estiliza subtítulos dentro dos itens do resumo, definindo background e tamanho da fonte. */
+.resume .resume-item h5 {
+  font-size: 16px;
+  background: #f7f8f9;
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Seletor descendente: Define estilos para listas dentro dos itens do resumo, incluindo padding esquerdo para indentação. */
+.resume .resume-item ul {
+  padding-left: 20px;
+}
+
+/* Seletor descendente: Estiliza cada item da lista dentro dos itens do resumo para espaçamento adequado. */
+.resume .resume-item ul li {
+  padding-bottom: 10px;
+}
+
+/* Seletor de pseudo-classe: Remove padding inferior do último item do resumo para consistência no espaçamento. */
+.resume .resume-item:last-child {
+  padding-bottom: 0;
+}
+
+/* Seletor de pseudo-elemento: Cria um marcador visual à esquerda de cada item do resumo para destacar a seção. */
+.resume .resume-item::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  left: -9px;
+  top: 0;
+  background: #fff;
+  border: 2px solid #67c2b9;
+}
+
+/*--------------------------------------------------------------
+# Portfolio
+--------------------------------------------------------------*/
+/* Seletor de classe: Define os estilos base para itens individuais do portfólio, como margem inferior para separação. */
+.portfolio .portfolio-item {
+  margin-bottom: 30px;
+}
+
+/* Seletor de ID: Estiliza os filtros do portfólio, incluindo estilo de lista e alinhamento central. */
+.portfolio #portfolio-flters {
+  padding: 0;
+  margin: 0 auto 25px auto;
+  list-style: none;
+  text-align: center;
+  background: #fff;
+  border-radius: 50px;
+  padding: 2px 15px;
+}
+
+/* Seletor de descendente: Aplica estilos aos itens de filtro, incluindo cursor, padding, e transformações de texto. */
+.portfolio #portfolio-flters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #272829;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Seletores de pseudo-classe: Estiliza os itens de filtro ao passar o mouse ou quando estão ativos, alterando a cor. */
+.portfolio #portfolio-flters li:hover,
+.portfolio #portfolio-flters li.filter-active {
+  color: #0563bb;
+}
+
+/* Seletor de pseudo-classe: Remove margem à direita do último item do filtro para alinhamento adequado. */
+.portfolio #portfolio-flters li:last-child {
+  margin-right: 0;
+}
+
+/* Seletor de classe: Define os estilos iniciais para a área de exibição do portfólio, incluindo transições e posicionamento. */
+.portfolio .portfolio-wrap {
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: rgba(69, 80, 91, 0.8);
+}
+
+/* Seletor de pseudo-elemento: Cria um efeito visual no hover, ajustando a transparência e a posição de um pseudo-elemento. */
+.portfolio .portfolio-wrap::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.7);
+  position:absolute;
+  left: 30px;
+  right: 30px;
+  top: 30px;
+  bottom: 30px;
+  transition: all ease-in-out 0.3s;
+  z-index: 2;
+  opacity: 0;
+}
+
+/* Seletor de descendente: Define os estilos para informações dentro do envoltório do portfólio, incluindo alinhamento e visibilidade. */
+.portfolio .portfolio-wrap .portfolio-info {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Seletores de pseudo-elementos: Estiliza visualmente os cantos do envoltório do portfólio no hover, usando bordas e posicionamento absoluto. */
+.portfolio .portfolio-wrap .portfolio-info::before,
+.portfolio .portfolio-wrap .portfolio-info::after {
+  display: block;
+  content: "";
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  transition: all 0.5s ease 0s;
+  z-index: 9994;
+}
+
+.portfolio .portfolio-wrap .portfolio-info::before {
+  top: 35px;
+  left: 35px;
+  border-top: 3px solid #d7dce1;
+  border-left: 3px solid #d7dce1;
+}
+
+.portfolio .portfolio-wrap .portfolio-info::after {
+  bottom: 35px;
+  right: 35px;
+  border-bottom: 3px solid #d7dce1;
+  border-right: 3px solid #d7dce1;
+}
+
+/* Seletor descendente: Aplica estilos aos títulos e parágrafos dentro das informações do portfólio, ajustando fonte, cor e text-transform. */
+.portfolio .portfolio-wrap .portfolio-info h4,
+.portfolio .portfolio-wrap .portfolio-info p {
+  font-size: 20px; /* Ajustado para h4 */
+  color: #45505b;
+  font-weight: 600; /* Ajustado para h4 */
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}
+
+/* Seletor descendente: Estiliza links dentro do envoltório do portfólio para interatividade visual. */
+.portfolio .portfolio-wrap .portfolio-links {
+  text-align: center;
+  z-index: 4;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a {
+  color: #45505b;
+  margin: 0 2px;
+  font-size: 28px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+/* Seletor de pseudo-classe: Aumenta a visibilidade dos links no hover, mudando a cor. */
+.portfolio .portfolio-wrap .portfolio-links a:hover {
+  color: #148af9;
+}
+
+/* Seletores de pseudo-classe: Aumenta a visibilidade das informações no envoltório do portfólio no hover, ajustando opacidade e posicionamento dos pseudo-elementos. */
+.portfolio .portfolio-wrap:hover::before,
+.portfolio .portfolio-wrap:hover .portfolio-info,
+.portfolio .portfolio-wrap:hover .portfolio-info::before,
+.portfolio .portfolio-wrap:hover .portfolio-info::after {
+  opacity: 1;
+  top: 15px; /* Ajustado para pseudo-elementos */
+  left: 15px; /* Ajustado para pseudo-elementos */
+  bottom: 15px; /* Ajustado para pseudo-elementos */
+  right: 15px; /* Ajustado para pseudo-elementos */
+}
+
+/*--------------------------------------------------------------
+# Portfolio Details
+--------------------------------------------------------------*/
+/* Seletor de classe: Define estilos base para a seção de detalhes do portfólio, incluindo padding superior para espaçamento. */
+.portfolio-details {
+  padding-top: 40px;
+}
+
+/* Seletor descendente: Estiliza imagens dentro do slider de detalhes do portfólio, garantindo que ocupem toda a largura disponível. */
+.portfolio-details .portfolio-details-slider img {
+  width: 100%;
+}
+
+/* Seletor descendente combinado com pseudo-classe: Estiliza a paginação do slider de detalhes do portfólio, posicionando-a e ajustando seu estilo visual. */
+.portfolio-details .portfolio-details-slider .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet,
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #0563bb;
+}
+
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #0563bb;
+}
+
+/* Seletor de classe: Estiliza a área de informações dentro dos detalhes do portfólio, aplicando sombra e padding para clareza visual. */
+.portfolio-details .portfolio-info {
+  padding: 30px;
+  box-shadow: 0px 0 30px rgba(69, 80, 91, 0.08);
+}
+
+/* Seletor descendente: Aplica estilos aos títulos dentro das informações dos detalhes do portfólio, incluindo tamanho da fonte e peso. */
+.portfolio-details .portfolio-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Seletor descendente: Estiliza listas dentro das informações dos detalhes do portfólio, removendo estilos padrão e ajustando fonte. */
+.portfolio-details .portfolio-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+/* Seletor de pseudo-classe combinado com descendente: Ajusta o espaçamento entre itens de lista dentro das informações dos detalhes do portfólio. */
+.portfolio-details .portfolio-info ul li + li {
+  margin-top: 10px;
+}
+
+/* Seletor de classe: Define os estilos para a descrição dentro dos detalhes do portfólio, incluindo padding superior e estilos de texto. */
+.portfolio-details .portfolio-description {
+  padding-top: 30px;
+}
+
+/* Seletor descendente: Aplica estilos aos títulos dentro da descrição dos detalhes do portfólio, ajustando tamanho da fonte e margem. */
+.portfolio-details .portfolio-description h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Seletor descendente: Estiliza parágrafos dentro da descrição dos detalhes do portfólio para manter a consistência no espaçamento e apresentação. */
+.portfolio-details .portfolio-description p {
+  padding: 0;
+}/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+/* Seletor de classe: Estilos gerais para caixas de serviço com fundo branco e sombras para efeito de profundidade. */
+.services .icon-box {
+  padding: 50px 20px;
+  background: #fff;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Seletor de descendente: Estilos para ícones dentro das caixas de serviços, centralizando e definindo um fundo sutil. */
+.services .icon-box .icon {
+  margin: 0 auto 20px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7f7f7;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Seletor de pseudo-classe: Efeitos de hover nas caixas de serviço para aumentar a visibilidade e interatividade. */
+.services .icon-box:hover {
+  border-color: #e2e2e2;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Seletor de descendente: Estilização dos títulos dentro das caixas de serviço, incluindo transições de cor. */
+.services .icon-box h4 {
+  color: #333;
+  transition: color 0.3s;
+}
+
+/* Seletor de descendente combinado com pseudo-classe: Estilos para links dentro dos títulos para remover sublinhado e herdar cores. */
+.services .icon-box h4 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Seletor de pseudo-classe: Altera a cor dos links no hover para melhorar a interatividade. */
+.services .icon-box h4 a:hover {
+  color: #555;
+}
+
+/* Seletor de descendente: Estilos para parágrafos dentro das caixas, definindo a cor e o espaçamento da linha. */
+.services .icon-box p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Seletores de classe e pseudo-classe: Ajustes de cores para ícones dentro das caixas de serviço para estados normais e de hover. */
+.services .iconbox-blue i,
+.services .iconbox-blue:hover .icon i {
+  color: #67c2b9;
+}
+
+.services .iconbox-orange i,
+.services .iconbox-orange:hover .icon i {
+  color: #ffa76e;
+}
+
+/*--------------------------------------------------------------
+# Testimonials
+--------------------------------------------------------------*/
+/* Seletor de classe: Estilos gerais para a seção de depoimentos, incluindo cabeçalho e controle de overflow. */
+.testimonials .section-header {
+  margin-bottom: 40px;
+}
+
+.testimonials .testimonials-carousel,
+.testimonials .testimonials-slider {
+  overflow: hidden;
+}
+
+/* Seletor de classe: Estilos para cada item de depoimento, centralizando texto e ajustando a imagem. */
+.testimonials .testimonial-item {
+  text-align: center;
+}
+
+.testimonials .testimonial-item .testimonial-img {
+  width: 120px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  margin: 0 auto;
+}
+
+/* Seletor de classe: Estilos para o nome e ocupação nos depoimentos, incluindo cores e margens. */
+.testimonials .testimonial-item h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+  color: #111;
+}
+
+.testimonials .testimonial-item h4 {
+  font-size: 14px;
+  color: #999;
+  margin: 0 0 15px 0;
+}
+
+/* Seletores de classe e pseudo-elemento: Ícones de citação para adicionar estilo visual aos depoimentos. */
+.testimonials .testimonial-item .quote-icon-left,
+.testimonials .testimonial-item .quote-icon-right {
+  color: #90c8fc;
+  font-size: 26px;
+}
+
+.testimonials .testimonial-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.testimonials .testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+}
+
+/* Seletor de classe: Estilização para o texto dos depoimentos, definindo estilo de fonte e margens. */
+.testimonials .testimonial-item p {
+  font-style: italic;
+  margin: 0 auto 15px auto;
+}
+
+/* Seletor de classe: Estilos para a paginação do carrossel de depoimentos, incluindo posição e estilos de bullet. */
+.testimonials .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #67c2b9;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #67c2b9;
+}
+
+/* Media Query: Ajustes para o texto dos depoimentos em telas grandes, controlando a largura. */
+@media (min-width: 992px) {
+  .testimonials .testimonial-item p {
+    width: 80%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+/* Seletor de classe: Estilos gerais para a seção de contato, incluindo cores e layout. */
+.contact .info {
+  width: 100%;
+  background: #fff;
+}
+
+/* Seletor de classe combinado com pseudo-elemento: Ícones estilizados para elementos de contato, com transição para hover. */
+.contact .info i {
+  font-size: 20px;
+  color: #67c2b9;
+  float: left;
+  width: 44px;
+  height: 44px;
+  background: #eef7ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Seletores de classe: Estilos para cabeçalhos e parágrafos dentro da seção de informações de contato, definindo cores e margens. */
+.contact .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #45505b;
+}
+
+.contact .info p {
+  padding: 0 0 0 60px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #728394;
+}
+
+/* Seletores de classe e pseudo-classe: Estilos para estados hover em ícones de contato, alterando cores de fundo e texto. */
+.contact .info .email:hover i,
+.contact .info .address:hover i,
+.contact .info .phone:hover i {
+  background: #67c2b9;
+  color: #fff;
+}
+
+/* Seletor de classe: Estilos para o formulário de contato, incluindo cores de fundo e bordas. */
+.contact .php-email-form {
+  width: 100%;
+  background: #fff;
+}
+
+.contact .php-email-form .form-group {
+  padding-bottom: 8px;
+}
+
+/* Seletores de classe: Estilos para mensagens de erro e sucesso no formulário de contato, incluindo visibilidade e cores. */
+.contact .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+/* Seletor de classe: Estilos para o estado de carregamento do formulário, definindo animações e visibilidade. */
+.contact .php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  animation: animate-loading 1s linear infinite;
+}
+
+/* Seletores de classe para inputs e botões do formulário, definindo estilos de borda, sombra e transições. */
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+  border-radius: 4px;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+.contact .php-email-form input[type=text],
+.contact .php-email-form input[type=email] {
+  height: 44px;
+}
+
+.contact .php-email-form textarea {
+  padding: 10px 12px;
+}
+
+.contact .php-email-form button[type=submit] {
+  background: #67c2b9;
+  border: 0;
+  padding: 10px 35px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+/* Seletor de pseudo-classe: Estilos para o estado hover do botão de envio, ajustando a cor de fundo. */
+.contact .php-email-form button[type=submit]:hover {
+  background: #67c2b9;
+}
+
+/* Animação chave: Define a animação de rotação para o ícone de carregamento no formulário de contato. */
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+/* Seletor de ID: Aplica estilos ao rodapé, incluindo cor de fundo, alinhamento de texto, cor do texto, tamanho de fonte e padding. */
+#footer {
+  background: #f7f8f9;
+  color: #45505b;
+  font-size: 14px;
+  text-align: center;
+  padding: 30px 0;
+}
+
+/* Seletor de descendente: Estiliza o título dentro do rodapé com tamanho específico de fonte e peso, sem margens ou padding adicionais. */
+#footer h3 {
+  font-size: 36px;
+  font-weight: 700;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+/* Seletor de descendente: Aplica estilos ao parágrafo no rodapé, definindo o tamanho de fonte, estilo e margens. */
+#footer p {
+  font-size: 15px;
+  font-style: italic;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+
+/* Seletor de descendente: Estiliza a área de links sociais no rodapé, definindo margens. */
+#footer .social-links {
+  margin: 0 0 40px 0;
+}
+
+/* Seletor de descendente: Aplica estilos aos links sociais dentro do rodapé, definindo tamanho, cor, padding, e interatividade ao hover. */
+#footer .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #67c2b9;
+  color: #111;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+/* Seletor de pseudo-classe: Altera o fundo e a cor do texto dos links sociais ao passar o mouse, para destacar a interatividade. */
+#footer .social-links a:hover {
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Seletor de descendente: Estiliza a área de direitos autorais no rodapé, ajustando as margens para um layout limpo. */
+#footer .copyright {
+  margin: 0 0 5px 0;
+}
+
+/* Seletor de descendente: Aplica estilos específicos para o texto de créditos no rodapé, definindo o tamanho de fonte. */
+#footer .credits {
+  font-size: 13px;
+}
+```
